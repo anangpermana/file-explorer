@@ -10,7 +10,7 @@ export const FolderProvider = ({ children }) => {
 
   const fetchFolders = async () => {
     try {
-      const response = await axios.get('http://localhost:3001/api/folders/1'); // Root folder
+      const response = await axios.get('https://selfish-vittoria-test-ang-142bf17c.koyeb.app/api/folders/1'); // Root folder
       setFolders(response.data.folder.subfolders);
       setSelectedFolder(response.data.folder);
     } catch (error) {
@@ -20,7 +20,7 @@ export const FolderProvider = ({ children }) => {
 
   const fetchFolderContent = async (folderId) => {
     try {
-      const response = await axios.get(`http://localhost:3001/api/folders/${folderId}`);
+      const response = await axios.get(`https://selfish-vittoria-test-ang-142bf17c.koyeb.app/api/folders/${folderId}`);
       setSelectedFolder(response.data.folder);
       setContent({
         files: response.data.folder.files,
